@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+            <meta charset="UTF-8">
+            <title>Nicholas Paquin</title>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+            <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+            <!--Icons-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <!--Fonts-->
+            <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,500,700,900" rel="stylesheet">
+            <!--    
+            font-family: 'Roboto', sans-serif;
+            -->
+            <!--Favicon-->
+            <link rel="shortcut icon" href="better_shit_logo.png">
+            <link rel="apple-touch-icon" href="better_shit_logo.png">
+            <style>
+                .loader {
+                    position: fixed;
+                    left: 50%;
+                    top: 50%;
+                    z-index: 1;
+                    width: 150px;
+                    height: 150px;
+                    margin: -75px 0 0 -75px;
+                    border: 16px solid #f3f3f3;
+                    border-radius: 50%;
+                    border-top: 16px solid rgb(204, 23, 23);
+                    width: 120px;
+                    height: 120px;
+                    -webkit-animation: spin 1s linear infinite;
+                    animation: spin 1s linear infinite;
+                }
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
+                }
+                .loading .wrapper{
+                    opacity: 0;
+                }
+                html{
+                    background-color: #4a4b4c;
+                }
+                .loading .background{
+                    filter: blur(10px);
+                    -webkit-filter: blur(10px);
+                }
+                .wrapper{
+                    opacity: 1;
+                    transition: 1s ease opacity;
+                }
+                body{
+                    margin: 0px;
+                    padding: 0px;
+                    background: transparent;
+                }
+                .background{
+                    background-image: url("old_brick.jpg");
+                    background-repeat: repeat;
+                    position: fixed;
+                    z-index: -1;
+                    width: 100%;
+                    height: 100%;
+                    transition: 1s ease filter, 1s ease -webkit-filter;
+                    filter: blur(1px);
+                    -webkit-filter: blur(1px);
+                }
+                *{
+                    box-sizing: border-box;
+                }
+                h1{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 700;
+                }
+                h2{
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 500;
+                }
+                p{
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 20px;
+                }
+                #image1{
+                    max-height: 72vh;
+                    width: auto;
+                    
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                #title{
+                    min-height: 100vh;
+                }
+                .Title{
+                    float: center;
+                    text-align: center;
+                    background-color:#4a4b4c;
+                    margin-bottom: 0px;
+                }
+                #Header{
+                    font-size: 700%;
+                    margin-bottom: 5px;
+                    margin-top: 0px;
+                    color: white;
+                }
+                #under_Header{
+                    margin-top: 0px;
+                    margin-bottom: 0px;
+                    font-size: 245%;
+                    color: white;
+                }
+               
+                ul {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #4a4b4c;
+                    position: -webkit-sticky; /* Safari */
+                    position: sticky;
+                    top: 0;
+                    font-size: 25px;
+                    font-family: 'Roboto', sans-serif;
+                }
+                li {
+                    float: left;
+                }
+
+                li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
+
+                li a:hover {
+                    background-color: black;
+                }
+
+                .active {
+                    background-color: rgb(204, 23, 23);
+                }
+                #right{
+                    float: right;
+                }
+                #left{
+                    float: left;
+                }
+                /*.side_bar{
+                    display: block;
+
+                    width: 2pc;
+                    height: 100pc;
+                    background-color: #4a4b4c;
+                    margin: 0px;
+                    padding: 0px;
+                }*/
+                .sub_title{
+                    font-size: 50px;
+                    /*margin-left: 1pc;*/
+                }
+                /*.about{
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: row;
+                    width: 100%;
+                    height: auto;
+                }*/
+                /*.about{
+                    margin-bottom: 5%;
+                    height: auto;
+                    width: 100%;
+                }*/
+                #img_about{
+                    float: right;
+                    width: 28%;
+                    height: 38%;
+                    margin-right: 5%;
+                    margin-top:5%;
+                    margin-bottom: 5%;
+                    padding: 0px;
+                    box-shadow:  0 0 2vh 1vh #4a4b4c;
+                }
+                #about_text{
+                    width: 43%;
+                    margin-right: 0px;
+                    margin-left: 5%; 
+                    margin-top: 10%;
+                    padding: 1%;
+                    padding-top: 0%;
+                    background-color: white;
+                    text-align: left;
+                    position: absolute;/*prevents right margin from covering whole screen*/
+                }
+                .follow{
+                    width: 100%;
+                    height: 5vh;
+                    background-color: #0a0a0a;
+                    clear: both;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    text-align: center;
+                    color: white;
+                    font-size: 30px;
+                    font-weight: 100;
+                }
+                .footer{
+                    width: 100%;
+                    height: 12vh; /*change this to a relative measure!!*/
+                    background-color: #4a4b4c;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    clear: both;
+                    text-align: center;
+                    padding-top: 1.25vh;
+                }
+                .social{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    margin-bottom: 1vh;
+                }
+                .icon{
+                    height: 6vh;
+                    width: auto;
+                    padding-right: 3vh;
+                }
+                .copyright{
+                    display: flex;
+                    justify-content: center;
+                    clear:both;
+                    color: white;
+                    font-size: 16px;
+                    font-family: 'Roboto', sans-serif;
+                    font-weight: 100;
+                }
+            </style>
+    </head>
+    <body class="loading">
+        <div class="loader"></div>
+        <div class="background"></div>
+        <div class="wrapper">
+            <div id="right" class="side_bar"></div>
+            <div id="left" class="side_bar"></div>
+            <div id="title">
+                <img id="image1" src="Photos\nicholas_solo_bw_copy.png" alt="A Picture of Nicholas"/>
+                <div id="menu">
+                    <div class="Title">
+                        <h1 id="Header">Nicholas Paquin</h1>
+                        <h2 id="under_Header">The Complete Guide</h2>
+                    </div>
+                </div>
+                <div class="menu_bar">
+                    <ul>
+                        <li><a class="active" href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#resume">Resumé</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="about">
+                <div id="about_text">
+                    <h1 class="sub_title">About Me</h1>
+                    <p>I am a newly minted Ashbury College graduate pursuing a bachelor's degree in Electrical and Computer Engineering Honours Co-op at the University of Waterloo. I strive to better myself every day through hard work, discipline, creativity, passion and a positive attitude. My professional ambitions at the moment lie in renewable energy and agriculture. My passions in life are education, physics, chemistry, mathematics, history, sports, and music. I look forward to one day owning my own business and (hopefully) changing the world.</p>
+                </div>
+                <img id="img_about" src="Photos\np_graduation.jpg">
+            </div>
+            <div class="follow">
+                <p>You can connect with me on LinkedIn and follow my projects on GitHub below :</p>
+            </div>
+            <div class="footer">
+                <div class="social">
+                    <div class="linkedin">
+                        <a href="https://www.linkedin.com/in/nicholas-p-374097112/"><img class="icon" src="Photos\Icons\Linkedin_no_background.png"/></a>
+                    </div>
+                    <div class="github">
+                        <a href="https://github.com/getagrip1999"><img class="icon" src="Photos\Icons\github.png"/></a>
+                    </div>
+                </div>
+                <p class="copyright"> Copyright 2018 by Nicholas Paquin. All Rights Reserved.</p>
+            </div>
+        </div>
+    </body>
+    <script>
+        $(window).on("load", function(){
+            $("body").removeClass("loading");
+            $("div").removeClass("loader");
+        });
+    </script>
+</html>
